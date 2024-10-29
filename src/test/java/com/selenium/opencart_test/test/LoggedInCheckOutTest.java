@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class LoggedCheckOutTest{
+public class LoggedInCheckOutTest{
 	private WebDriver driver;
 	
 	@Before
