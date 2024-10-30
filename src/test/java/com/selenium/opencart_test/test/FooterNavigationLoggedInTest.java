@@ -40,7 +40,7 @@ public class FooterNavigationLoggedInTest {
 		sleep(2000);
 
 		WebElement emailField = driver.findElement(By.id("input-email"));
-		emailField.sendKeys("bichqui1212@gmail.com");
+		emailField.sendKeys("test_login@gmail.com");
 		sleep(1000);
 
 		WebElement passwordField = driver.findElement(By.id("input-password"));
@@ -52,312 +52,366 @@ public class FooterNavigationLoggedInTest {
 		sleep(1000);
 
 	}
-
+	
+	//Chuyển sang trang About Us
 	@Test
 	public void testNavigationToAboutUs() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Đăng nhập vào hệ thống
+	    login();
+	    // Điều hướng đến trang chủ OpenCart
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement aboutUsLink = driver.findElement(By.linkText("About Us"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", aboutUsLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(aboutUsLink)).click();
+	    // Tìm liên kết "About Us" và cuộn đến nó
+	    WebElement aboutUsLink = driver.findElement(By.linkText("About Us"));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", aboutUsLink);
+	    sleep(1000);
+	    
+	    // Chờ cho liên kết có thể nhấp được và nhấp vào nó
+	    wait.until(ExpectedConditions.elementToBeClickable(aboutUsLink)).click();
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'information': " + currentUrl, currentUrl.contains("information"));
+	    // Lấy URL hiện tại và kiểm tra xem nó có chứa 'information' không
+	    String currentUrl = driver.getCurrentUrl();
+	    Assert.assertTrue("URL không chứa 'information': " + currentUrl, currentUrl.contains("information"));
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'About Us': " + pageTitle, pageTitle.contains("About Us"));
+	    // Lấy tiêu đề trang và kiểm tra xem nó có chứa 'About Us' không
+	    String pageTitle = driver.getTitle();
+	    Assert.assertTrue("Tiêu đề không chứa 'About Us': " + pageTitle, pageTitle.contains("About Us"));
 
-		sleep(1000);
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
 
+	//Chuyển sang trang Privacy Policy
 	@Test
 	public void testNavigationToPrivacyPolicy() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Đăng nhập vào hệ thống
+	    login();
+	    // Điều hướng đến trang chủ OpenCart
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement privacyPolicyLink = driver.findElement(By.linkText("Privacy Policy"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyPolicyLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(privacyPolicyLink)).click();
+	    // Tìm liên kết "Privacy Policy" và cuộn đến nó
+	    WebElement privacyPolicyLink = driver.findElement(By.linkText("Privacy Policy"));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyPolicyLink);
+	    sleep(1000);
+	    
+	    // Chờ cho liên kết có thể nhấp được và nhấp vào nó
+	    wait.until(ExpectedConditions.elementToBeClickable(privacyPolicyLink)).click();
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'information': " + currentUrl, currentUrl.contains("information"));
+	    // Lấy URL hiện tại và kiểm tra xem nó có chứa 'information' không
+	    String currentUrl = driver.getCurrentUrl();
+	    Assert.assertTrue("URL không chứa 'information': " + currentUrl, currentUrl.contains("information"));
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'Privacy Policy': " + pageTitle, pageTitle.contains("Privacy Policy"));
+	    // Lấy tiêu đề trang và kiểm tra xem nó có chứa 'Privacy Policy' không
+	    String pageTitle = driver.getTitle();
+	    Assert.assertTrue("Tiêu đề không chứa 'Privacy Policy': " + pageTitle, pageTitle.contains("Privacy Policy"));
 
-		sleep(1000);
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
-
+	
+	//Chuyển sang trang Terms And Conditions
 	@Test
 	public void testNavigationToTermsAndConditions() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Đăng nhập vào hệ thống
+	    login();
+	    // Điều hướng đến trang chủ OpenCart
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement termsLink = driver.findElement(By.linkText("Terms & Conditions"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", termsLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(termsLink)).click();
+	    // Tìm liên kết "Terms & Conditions" và cuộn đến nó
+	    WebElement termsLink = driver.findElement(By.linkText("Terms & Conditions"));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", termsLink);
+	    sleep(1000);
+	    
+	    // Chờ cho liên kết có thể nhấp được và nhấp vào nó
+	    wait.until(ExpectedConditions.elementToBeClickable(termsLink)).click();
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'information': " + currentUrl, currentUrl.contains("information"));
+	    // Lấy URL hiện tại và kiểm tra xem nó có chứa 'information' không
+	    String currentUrl = driver.getCurrentUrl();
+	    Assert.assertTrue("URL không chứa 'information': " + currentUrl, currentUrl.contains("information"));
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'Terms & Conditions': " + pageTitle,
-				pageTitle.contains("Terms & Conditions"));
+	    // Lấy tiêu đề trang và kiểm tra xem nó có chứa 'Terms & Conditions' không
+	    String pageTitle = driver.getTitle();
+	    Assert.assertTrue("Tiêu đề không chứa 'Terms & Conditions': " + pageTitle,
+	            pageTitle.contains("Terms & Conditions"));
 
-		sleep(1000);
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
-
+	
+	//Chuyển sang trang Site Map
 	@Test
 	public void testNavigationToSiteMap() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Đăng nhập vào hệ thống
+	    login();
+	    // Điều hướng đến trang chủ OpenCart
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement siteMapLink = driver.findElement(By.linkText("Site Map"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", siteMapLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(siteMapLink)).click();
+	    // Tìm liên kết "Site Map" và cuộn đến nó
+	    WebElement siteMapLink = driver.findElement(By.linkText("Site Map"));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", siteMapLink);
+	    sleep(1000);
+	    
+	    // Chờ cho liên kết có thể nhấp được và nhấp vào nó
+	    wait.until(ExpectedConditions.elementToBeClickable(siteMapLink)).click();
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'sitemap': " + currentUrl, currentUrl.contains("sitemap"));
+	    // Lấy URL hiện tại và kiểm tra xem nó có chứa 'sitemap' không
+	    String currentUrl = driver.getCurrentUrl();
+	    Assert.assertTrue("URL không chứa 'sitemap': " + currentUrl, currentUrl.contains("sitemap"));
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'Site Map': " + pageTitle, pageTitle.contains("Site Map"));
+	    // Lấy tiêu đề trang và kiểm tra xem nó có chứa 'Site Map' không
+	    String pageTitle = driver.getTitle();
+	    Assert.assertTrue("Tiêu đề không chứa 'Site Map': " + pageTitle, pageTitle.contains("Site Map"));
 
-		sleep(1000);
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
 
 	@Test
 	public void testNavigationToContactUs() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Kiểm tra điều hướng đến trang "Contact Us"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement contactUsLink = driver.findElement(By.linkText("Contact Us"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", contactUsLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(contactUsLink)).click();
+	    WebElement contactUsLink = driver.findElement(By.linkText("Contact Us")); // Tìm liên kết "Contact Us"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", contactUsLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'contact': " + currentUrl, currentUrl.contains("contact"));
+	    wait.until(ExpectedConditions.elementToBeClickable(contactUsLink)).click(); // Chờ cho liên kết có thể nhấp được và nhấp vào
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'Contact Us': " + pageTitle, pageTitle.contains("Contact Us"));
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'contact': " + currentUrl, currentUrl.contains("contact")); // Kiểm tra URL
 
-		sleep(1000);
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Contact Us': " + pageTitle, pageTitle.contains("Contact Us")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
 
 	@Test
 	public void testNavigationToReturns() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Kiểm tra điều hướng đến trang "Returns"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement returnsLink = driver.findElement(By.linkText("Returns"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", returnsLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(returnsLink)).click();
+	    WebElement returnsLink = driver.findElement(By.linkText("Returns")); // Tìm liên kết "Returns"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", returnsLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'returns': " + currentUrl, currentUrl.contains("returns"));
+	    wait.until(ExpectedConditions.elementToBeClickable(returnsLink)).click(); // Chờ cho liên kết có thể nhấp được và nhấp vào
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'Returns': " + pageTitle, pageTitle.contains("Returns"));
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'returns': " + currentUrl, currentUrl.contains("returns")); // Kiểm tra URL
 
-		sleep(1000);
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Returns': " + pageTitle, pageTitle.contains("Returns")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
 
 	@Test
 	public void testNavigationToDeliveryInformation() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Kiểm tra điều hướng đến trang "Delivery Information"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement deliveryInfoLink = driver.findElement(By.linkText("Delivery Information"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", deliveryInfoLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(deliveryInfoLink)).click();
+	    WebElement deliveryInfoLink = driver.findElement(By.linkText("Delivery Information")); // Tìm liên kết "Delivery Information"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", deliveryInfoLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'information': " + currentUrl, currentUrl.contains("information"));
+	    wait.until(ExpectedConditions.elementToBeClickable(deliveryInfoLink)).click(); // Chờ cho liên kết có thể nhấp được và nhấp vào
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'Delivery Information': " + pageTitle,
-				pageTitle.contains("Delivery Information"));
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'information': " + currentUrl, currentUrl.contains("information")); // Kiểm tra URL
 
-		sleep(1000);
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Delivery Information': " + pageTitle, pageTitle.contains("Delivery Information")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
 
 	@Test
 	public void testNavigationToBrands() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Kiểm tra điều hướng đến trang "Brands"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement brandsLink = driver.findElement(By.linkText("Brands"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", brandsLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(brandsLink)).click();
+	    WebElement brandsLink = driver.findElement(By.linkText("Brands")); // Tìm liên kết "Brands"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", brandsLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'manufacturer': " + currentUrl, currentUrl.contains("manufacturer"));
+	    wait.until(ExpectedConditions.elementToBeClickable(brandsLink)).click(); // Chờ cho liên kết có thể nhấp được và nhấp vào
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'Find Your Favorite Brand': " + pageTitle,
-				pageTitle.contains("Find Your Favorite Brand"));
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'manufacturer': " + currentUrl, currentUrl.contains("manufacturer")); // Kiểm tra URL
 
-		sleep(1000);
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Find Your Favorite Brand': " + pageTitle, pageTitle.contains("Find Your Favorite Brand")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
+
 
 	@Test
 	public void testNavigationToGiftCertificates() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Kiểm tra điều hướng đến trang "Gift Certificates"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement giftCertificatesLink = driver.findElement(By.linkText("Gift Certificates"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", giftCertificatesLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(giftCertificatesLink)).click();
+	    WebElement giftCertificatesLink = driver.findElement(By.linkText("Gift Certificates")); // Tìm liên kết "Gift Certificates"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", giftCertificatesLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'voucher': " + currentUrl, currentUrl.contains("voucher"));
+	    wait.until(ExpectedConditions.elementToBeClickable(giftCertificatesLink)).click(); // Chờ cho liên kết có thể nhấp được và nhấp vào
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'Purchase a Gift Certificate': " + pageTitle,
-				pageTitle.contains("Purchase a Gift Certificate"));
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'voucher': " + currentUrl, currentUrl.contains("voucher")); // Kiểm tra URL
 
-		sleep(1000);
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Purchase a Gift Certificate': " + pageTitle, pageTitle.contains("Purchase a Gift Certificate")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
 
 	@Test
 	public void testNavigationToSpecials() {
-		login();
-		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-		sleep(1000);
+	    // Kiểm tra điều hướng đến trang "Specials"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-		WebElement specialsLink = driver.findElement(By.linkText("Specials"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", specialsLink);
-		sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(specialsLink)).click();
+	    WebElement specialsLink = driver.findElement(By.linkText("Specials")); // Tìm liên kết "Specials"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", specialsLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-		String currentUrl = driver.getCurrentUrl();
-		Assert.assertTrue("URL không chứa 'special': " + currentUrl, currentUrl.contains("special"));
+	    wait.until(ExpectedConditions.elementToBeClickable(specialsLink)).click(); // Chờ cho liên kết có thể nhấp được và nhấp vào
 
-		String pageTitle = driver.getTitle();
-		Assert.assertTrue("Tiêu đề không chứa 'Special Offers': " + pageTitle, pageTitle.contains("Special Offers"));
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'special': " + currentUrl, currentUrl.contains("special")); // Kiểm tra URL
 
-		sleep(1000);
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Special Offers': " + pageTitle, pageTitle.contains("Special Offers")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
-	
+
 	@Test
 	public void testNavigationToAffiliate() {
-	    login();  
-	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-	    sleep(1000);
-	    
-	    WebElement affiliateLink = driver.findElement(By.linkText("Affiliate"));
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", affiliateLink);
-	    sleep(1000);
-	    affiliateLink.click();
+	    // Kiểm tra điều hướng đến trang "Affiliate"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-	    String currentUrl = driver.getCurrentUrl();
-	    Assert.assertTrue("URL không chứa 'affiliate': " + currentUrl, currentUrl.contains("affiliate"));
+	    WebElement affiliateLink = driver.findElement(By.linkText("Affiliate")); // Tìm liên kết "Affiliate"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", affiliateLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-	    String pageTitle = driver.getTitle();
-	    Assert.assertTrue("Tiêu đề không chứa 'Affiliate': " + pageTitle, pageTitle.contains("Your Affiliate Information"));
-	    
-	    sleep(1000);
+	    affiliateLink.click(); // Nhấp vào liên kết
+
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'affiliate': " + currentUrl, currentUrl.contains("affiliate")); // Kiểm tra URL
+
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Affiliate': " + pageTitle, pageTitle.contains("Your Affiliate Information")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
-	
+
 	@Test
 	public void testNavigationToMyAccount() {
-	    login();  
-	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-	    sleep(1000);
-	    
-	    WebElement myAccountLink = driver.findElement(By.cssSelector("body > footer > div > div > div:nth-child(4) > ul > li:nth-child(1) > a"));
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", myAccountLink);
-	    sleep(1000);
-	    myAccountLink.click();
-	    
-	    sleep(3000);
+	    // Kiểm tra điều hướng đến trang "My Account"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-	    String currentUrl = driver.getCurrentUrl();
-	    Assert.assertTrue("URL không chứa 'account': " + currentUrl, currentUrl.contains("account"));
+	    WebElement myAccountLink = driver.findElement(By.cssSelector("body > footer > div > div > div:nth-child(4) > ul > li:nth-child(1) > a")); // Tìm liên kết "My Account"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", myAccountLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-	    String pageTitle = driver.getTitle();
-	    Assert.assertTrue("Tiêu đề không chứa 'My Account': " + pageTitle, pageTitle.contains("My Account"));
-	    
-	    sleep(1000);
+	    myAccountLink.click(); // Nhấp vào liên kết
+
+	    sleep(3000); // Chờ trang tải xong
+
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'account': " + currentUrl, currentUrl.contains("account")); // Kiểm tra URL
+
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'My Account': " + pageTitle, pageTitle.contains("My Account")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
 
 	@Test
 	public void testNavigationToOrderHistory() {
-	    login();  
-	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-	    sleep(1000);
-	    
-	    WebElement orderHistoryLink = driver.findElement(By.linkText("Order History"));
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", orderHistoryLink);
-	    sleep(1000);
-	    orderHistoryLink.click();
+	    // Kiểm tra điều hướng đến trang "Order History"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-	    String currentUrl = driver.getCurrentUrl();
-	    Assert.assertTrue("URL không chứa 'order': " + currentUrl, currentUrl.contains("order"));
+	    WebElement orderHistoryLink = driver.findElement(By.linkText("Order History")); // Tìm liên kết "Order History"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", orderHistoryLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-	    String pageTitle = driver.getTitle();
-	    Assert.assertTrue("Tiêu đề không chứa 'Order History': " + pageTitle, pageTitle.contains("Orders"));
-	    
-	    sleep(1000);
+	    orderHistoryLink.click(); // Nhấp vào liên kết
+
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'order': " + currentUrl, currentUrl.contains("order")); // Kiểm tra URL
+
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Order History': " + pageTitle, pageTitle.contains("Orders")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
 
 	@Test
 	public void testNavigationToWishList() {
-	    login();  
-	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-	    sleep(1000);
-	    
-	    WebElement wishListLink = driver.findElement(By.linkText("Wish List"));
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", wishListLink);
-	    sleep(1000);
-	    wishListLink.click();
+	    // Kiểm tra điều hướng đến trang "Wish List"
+	    login(); // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-	    String currentUrl = driver.getCurrentUrl();
-	    Assert.assertTrue("URL không chứa 'wishlist': " + currentUrl, currentUrl.contains("wishlist"));
+	    WebElement wishListLink = driver.findElement(By.linkText("Wish List")); // Tìm liên kết "Wish List"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", wishListLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-	    String pageTitle = driver.getTitle();
-	    Assert.assertTrue("Tiêu đề không chứa 'Wish List': " + pageTitle, pageTitle.contains("My Wishlist"));
-	    
-	    sleep(1000);
+	    wishListLink.click(); // Nhấp vào liên kết
+
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'wishlist': " + currentUrl, currentUrl.contains("wishlist")); // Kiểm tra URL
+
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Wish List': " + pageTitle, pageTitle.contains("My Wishlist")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
+
 
 	@Test
 	public void testNavigationToNewsletter() {
-	    login();  
-	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-	    sleep(1000);
-	    
-	    WebElement newsletterLink = driver.findElement(By.linkText("Newsletter"));
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", newsletterLink);
-	    sleep(1000);
-	    newsletterLink.click();
+	    // Kiểm tra điều hướng đến trang "Newsletter"
+	    login();  // Đăng nhập vào hệ thống
+	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb"); // Điều hướng đến trang chủ
+	    sleep(1000); // Chờ trang tải xong
 
-	    String currentUrl = driver.getCurrentUrl();
-	    Assert.assertTrue("URL không chứa 'newsletter': " + currentUrl, currentUrl.contains("newsletter"));
+	    WebElement newsletterLink = driver.findElement(By.linkText("Newsletter")); // Tìm liên kết "Newsletter"
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", newsletterLink); // Cuộn đến liên kết
+	    sleep(1000); // Chờ một chút
 
-	    String pageTitle = driver.getTitle();
-	    Assert.assertTrue("Tiêu đề không chứa 'Newsletter': " + pageTitle, pageTitle.contains("Newsletter Subscription"));
-	    
-	    sleep(1000);
+	    newsletterLink.click(); // Nhấp vào liên kết "Newsletter"
+
+	    String currentUrl = driver.getCurrentUrl(); // Lấy URL hiện tại
+	    Assert.assertTrue("URL không chứa 'newsletter': " + currentUrl, currentUrl.contains("newsletter")); // Kiểm tra URL
+
+	    String pageTitle = driver.getTitle(); // Lấy tiêu đề trang
+	    Assert.assertTrue("Tiêu đề không chứa 'Newsletter': " + pageTitle, pageTitle.contains("Newsletter Subscription")); // Kiểm tra tiêu đề
+
+	    sleep(1000); // Chờ trước khi kết thúc kiểm thử
 	}
+
 	
 	@After
 	public void tearDown() {
