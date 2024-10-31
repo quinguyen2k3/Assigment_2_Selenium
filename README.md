@@ -39,8 +39,8 @@ File README này giải thích cách thiết lập môi trường và chạy cá
    ```
    
   Hãy xóa dòng này đi để chạy chạy các Test Case
-
-3. **Chạy các Test Case**
+3. **Tải các OpenCart**
+4. **Chạy các Test Case**
    - Để chạy tất cả các Test Case, sử dụng lệnh:
      ```bash
      mvn test
@@ -51,7 +51,7 @@ File README này giải thích cách thiết lập môi trường và chạy cá
      ```bash
      mvn -Dtest=TestClassName#testMethodName test
 
-4. **Tạo báo cáo kiểm thử**:
+5. **Tạo báo cáo kiểm thử**:
     - Hãy thêm lại phần bỏ đi về chổ cũ:
        ```bash
         <configuration>  
