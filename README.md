@@ -25,13 +25,16 @@ File README này giải thích cách thiết lập môi trường và chạy cá
    ```bash
    git clone https://github.com/quinguyen2k3/Assigment_2_Selenium.git
    cd Assigment_2_Selenium
-
 2. **Chạy file POM**:
-   **Lưu ý:** Trong file POM có phần sau:
+**Tải các Dependency**
+      ```bash
+      mvn clean install
+   
+**Lưu ý:** Trong file POM có phần sau:
    ```bash
-   <configuration>  
-      <skipTests>true</skipTests>  
-   </configuration>
+      <configuration>  
+         <skipTests>true</skipTests>  
+      </configuration>
    
   Hãy xóa dòng này đi để chạy chạy các Test Case
 
@@ -56,3 +59,4 @@ File README này giải thích cách thiết lập môi trường và chạy cá
         ```bash
         mvn test
    - File báo cáo dạng HTML sẽ được tạo trong thư mục target/site. Tôi đã có để những file kết quả kiểm thử của mình trong folder target/site của dự án
+  
