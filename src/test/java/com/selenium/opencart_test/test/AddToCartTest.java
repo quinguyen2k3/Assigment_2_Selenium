@@ -120,132 +120,132 @@ public class AddToCartTest {
 	//Thêm hai sản phẩm khác nhau hoàn toàn
 	@Test
 	public void testAddDifferentProductToCart() throws AWTException {
-	    // Navigate to the OpenCart site
+	    // Điều hướng đến trang OpenCart
 	    driver.get("http://localhost/opencartsite/");
-	    sleep(2000); // Wait for the page to load
+	    sleep(2000); // Chờ trang tải xong
 
-	    // Find and click the 'Add to Cart' button for the first product (iPhone)
+	    // Tìm và nhấp vào nút 'Thêm vào giỏ hàng' cho sản phẩm đầu tiên (iPhone)
 	    WebElement addToCartButton_1 = driver.findElement(By.cssSelector(
 	        "#content > div.row.row-cols-1.row-cols-sm-2.row-cols-md-3.row-cols-xl-4 > div:nth-child(2) > div > div.content > form > div > button:nth-child(1)"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addToCartButton_1);
 	    sleep(1000);
-	    addToCartButton_1.click(); // Click to add the iPhone to the cart
-	    sleep(5000); // Wait for the action to complete
+	    addToCartButton_1.click(); // Nhấp để thêm iPhone vào giỏ hàng
+	    sleep(5000); // Chờ hành động hoàn tất
 
-	    // Find and click the 'Add to Cart' button for the second product (Apple Cinema)
+	    // Tìm và nhấp vào nút 'Thêm vào giỏ hàng' cho sản phẩm thứ hai (Apple Cinema)
 	    WebElement addToCartButton_2 = driver.findElement(By.cssSelector(
 	        "#content > div.row.row-cols-1.row-cols-sm-2.row-cols-md-3.row-cols-xl-4 > div:nth-child(3) > div > div.content > form > div > button:nth-child(1)"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addToCartButton_2);
 	    sleep(2000);
-	    addToCartButton_2.click(); // Click to add the Apple Cinema to the cart
-	    sleep(5000); // Wait for the action to complete
+	    addToCartButton_2.click(); // Nhấp để thêm Apple Cinema vào giỏ hàng
+	    sleep(5000); // Chờ hành động hoàn tất
 
-	    // Select size option for the Apple Cinema product
+	    // Chọn kích cỡ cho sản phẩm Apple Cinema
 	    WebElement size = driver.findElement(By.cssSelector("#input-option-value-5"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", size);
 	    sleep(1000);
-	    size.click(); // Click to select the size option
+	    size.click(); // Nhấp để chọn kích cỡ
 	    sleep(1000);
 
-	    // Select an additional option for the Apple Cinema product
+	    // Chọn thêm một tùy chọn cho sản phẩm Apple Cinema
 	    WebElement checkbox_1 = driver.findElement(By.cssSelector("#input-option-value-9"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkbox_1);
 	    sleep(1000);
-	    checkbox_1.click(); // Click to select the additional checkbox option
+	    checkbox_1.click(); // Nhấp để chọn tùy chọn thêm
 	    sleep(1000);
 
-	    // Input custom text for the Apple Cinema product
+	    // Nhập văn bản tùy chỉnh cho sản phẩm Apple Cinema
 	    WebElement text = driver.findElement(By.cssSelector("#input-option-208"));
-	    text.sendKeys("TEST OPTION"); // Enter custom text
+	    text.sendKeys("TÙY CHỌN TEST"); // Nhập văn bản tùy chỉnh
 
-	    sleep(1000); // Wait for the action to complete
+	    sleep(1000); // Chờ hành động hoàn tất
 
-	    // Select a color option from the dropdown
+	    // Chọn màu từ danh sách thả xuống
 	    WebElement dropdown = driver.findElement(By.cssSelector("#input-option-217"));
 	    Select selection = new Select(dropdown);
-	    selection.selectByVisibleText("Red (+$6.80)"); // Choose color option
+	    selection.selectByVisibleText("Đỏ (+6,80$)"); // Chọn màu sắc
 
-	    sleep(1000); // Wait for the action to complete
+	    sleep(1000); // Chờ hành động hoàn tất
 
-	    // Input text in a textarea for the Apple Cinema product
+	    // Nhập văn bản vào ô văn bản cho sản phẩm Apple Cinema
 	    WebElement textarea = driver.findElement(By.cssSelector("#input-option-209"));
-	    textarea.sendKeys("TEST TEST AREA"); // Enter text in the textarea
+	    textarea.sendKeys("TEST KHU VỰC VĂN BẢN"); // Nhập văn bản vào ô văn bản
 
-	    sleep(1000); // Wait for the action to complete
+	    sleep(1000); // Chờ hành động hoàn tất
 
-	    // Specify the path for the image to upload
+	    // Chỉ định đường dẫn ảnh để tải lên
 	    String filePath = "C:" + File.separator + "Users" + File.separator + "ADMIN" + File.separator + "Pictures"
 	        + File.separator + "Saved Pictures" + File.separator + "tomato.jpg";
 
-	    // Find and click the upload button
+	    // Tìm và nhấp vào nút tải lên
 	    WebElement uploadButton = driver.findElement(By.cssSelector("#button-upload-222"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", uploadButton);
 	    sleep(1000);
-	    uploadButton.click(); // Click to open the upload dialog
+	    uploadButton.click(); // Nhấp để mở hộp thoại tải lên
 
-	    // Use the Robot class to upload a file from the clipboard
+	    // Sử dụng lớp Robot để dán đường dẫn file từ clipboard
 	    StringSelection stringSelection = new StringSelection(filePath);
 	    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 	    Robot robot = new Robot();
 
-	    sleep(2000); // Wait before pasting the file path
+	    sleep(2000); // Chờ trước khi dán đường dẫn file
 	    robot.keyPress(KeyEvent.VK_CONTROL);
-	    robot.keyPress(KeyEvent.VK_V); // Paste the file path
+	    robot.keyPress(KeyEvent.VK_V); // Dán đường dẫn file
 	    robot.keyRelease(KeyEvent.VK_V);
 	    robot.keyRelease(KeyEvent.VK_CONTROL);
 
-	    sleep(2000); // Wait before confirming the upload
-	    robot.keyPress(KeyEvent.VK_ENTER); // Confirm the upload
+	    sleep(2000); // Chờ trước khi xác nhận tải lên
+	    robot.keyPress(KeyEvent.VK_ENTER); // Xác nhận tải lên
 	    robot.keyRelease(KeyEvent.VK_ENTER);
 
-	    sleep(1000); // Wait for the upload to complete
+	    sleep(1000); // Chờ tải lên hoàn tất
 
-	    // Accept the alert that appears after uploading the file
+	    // Xác nhận cảnh báo sau khi tải lên file
 	    Alert alert = driver.switchTo().alert();
-	    alert.accept(); // Accept the alert
-	    sleep(1000); // Wait for the alert to close
+	    alert.accept(); // Chấp nhận cảnh báo
+	    sleep(1000); // Chờ cảnh báo đóng
 
-	    // Submit the cart
+	    // Gửi giỏ hàng
 	    WebElement submit = driver.findElement(By.cssSelector("#button-cart"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submit);
 	    sleep(2000);
-	    submit.click(); // Click to submit the cart
+	    submit.click(); // Nhấp để gửi giỏ hàng
 
-	    sleep(1000); // Wait for the action to complete
+	    sleep(1000); // Chờ hành động hoàn tất
 
-	    // Open the cart to verify the products added
+	    // Mở giỏ hàng để kiểm tra sản phẩm đã thêm
 	    WebElement cartButton = driver.findElement(By.cssSelector("#header-cart > div > button"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", cartButton);
 	    sleep(5000);
-	    cartButton.click(); // Click to view the cart
+	    cartButton.click(); // Nhấp để xem giỏ hàng
 
-	    sleep(5000); // Wait for the cart to load
+	    sleep(5000); // Chờ giỏ hàng tải xong
 
-	    // Verify the first product (iPhone) is correctly added to the cart
+	    // Kiểm tra sản phẩm đầu tiên (iPhone) đã được thêm vào giỏ hàng
 	    WebElement productIphoneName = driver.findElement(
 	        By.cssSelector("#header-cart > div > ul > li > table > tbody > tr:nth-child(1) > td.text-start > a"));
-	    String iphoneNameActual = productIphoneName.getText(); // Get the actual name of the iPhone
+	    String iphoneNameActual = productIphoneName.getText(); // Lấy tên thực tế của iPhone
 
 	    WebElement productIphoneQuantity = driver.findElement(
 	        By.cssSelector("#header-cart > div > ul > li > table > tbody > tr:nth-child(1) > td:nth-child(3)"));
-	    int iphoneQuantityActual = Integer.parseInt(productIphoneQuantity.getText().replace("x", "").trim()); // Get the actual quantity of iPhone
+	    int iphoneQuantityActual = Integer.parseInt(productIphoneQuantity.getText().replace("x", "").trim()); // Lấy số lượng thực tế của iPhone
 
-	    String iphoneNameExpected = "iPhone"; // Expected name for the iPhone
-	    int iphoneQuantityExpected = 1; // Expected quantity for the iPhone
+	    String iphoneNameExpected = "iPhone"; // Tên mong đợi của iPhone
+	    int iphoneQuantityExpected = 1; // Số lượng mong đợi của iPhone
 
-	    // Verify the second product (Apple Cinema) is correctly added to the cart
+	    // Kiểm tra sản phẩm thứ hai (Apple Cinema) đã được thêm vào giỏ hàng
 	    WebElement productAppleName = driver.findElement(
 	        By.cssSelector("#header-cart > div > ul > li > table > tbody > tr:nth-child(2) > td.text-start > a"));
-	    String appleNameActual = productAppleName.getText(); // Get the actual name of the Apple Cinema
+	    String appleNameActual = productAppleName.getText(); // Lấy tên thực tế của Apple Cinema
 
 	    WebElement productAppleQuantity = driver.findElement(
 	        By.cssSelector("#header-cart > div > ul > li > table > tbody > tr:nth-child(2) > td:nth-child(3)"));
-	    int appleQuantityActual = Integer.parseInt(productAppleQuantity.getText().replace("x", "").trim()); // Get the actual quantity of Apple Cinema
+	    int appleQuantityActual = Integer.parseInt(productAppleQuantity.getText().replace("x", "").trim()); // Lấy số lượng thực tế của Apple Cinema
 
-	    String appleNameExpected = "Apple Cinema 30\""; // Expected name for the Apple Cinema
-	    int appleQuantityExpected = 2; // Expected quantity for the Apple Cinema
+	    String appleNameExpected = "Apple Cinema 30\""; // Tên mong đợi của Apple Cinema
+	    int appleQuantityExpected = 2; // Số lượng mong đợi của Apple Cinema
 
-	    // Assert that the actual quantities and names match the expected values for both products
+	    // Kiểm tra số lượng và tên thực tế khớp với giá trị mong đợi cho cả hai sản phẩm
 	    Assert.assertEquals("Khác nhau số lượng", iphoneQuantityExpected, iphoneQuantityActual);
 	    Assert.assertEquals("Khác nhau về tên sản phẩm", iphoneNameExpected, iphoneNameActual);
 	    Assert.assertEquals("Khác nhau số lượng", appleQuantityExpected, appleQuantityActual);

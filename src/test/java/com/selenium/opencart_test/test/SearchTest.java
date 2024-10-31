@@ -70,6 +70,7 @@ public class SearchTest {
 		Assert.assertTrue("Sản phẩm " + productName + " không tồn tại trong danh sách", productExists);
 	}
 	
+	//Kiểm thử với tìm kiếm bằng Keyword
 	@Test
 	public void testSearchWithKeyword() {
 		// Khai báo tên sản phẩm cần tìm kiếm
@@ -380,7 +381,7 @@ public class SearchTest {
 		// Lấy thông báo từ trang kết quả tìm kiếm
 		boolean notificationElement = driver.findElements(By.cssSelector("#content > p")).size() > 0;
 
-		Assert.assertTrue("Phần tử không xuất hiện", notificationElement);
+		Assert.assertTrue("Phần thông báo danh sách rỗng không xuất hiện", notificationElement);
 
 		String notificationActual = "";
 		if (notificationElement) {

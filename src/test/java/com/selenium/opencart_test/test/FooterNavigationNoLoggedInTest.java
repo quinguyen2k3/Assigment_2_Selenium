@@ -33,7 +33,8 @@ public class FooterNavigationNoLoggedInTest {
 			e.printStackTrace();
 		}
 	}
-
+	
+	//Kiểm thử chuyển hướng đến AboutUs
 	@Test
 	public void testNavigationToAboutUs() {
 	    // Mở trang chính của website OpenCart
@@ -58,7 +59,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000);
 	}
-
+	
+	//Kiểm thử chuyển hướng đến Privacy Plicy
 	@Test
 	public void testNavigationToPrivacyPolicy() {
 	    // Mở trang chính của website OpenCart
@@ -83,7 +85,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000);
 	}
-
+	
+	//Kiểm thử chuyển hướng đến Terms And Conditions
 	@Test
 	public void testNavigationToTermsAndConditions() {
 	    // Mở trang chính của website OpenCart
@@ -108,7 +111,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000);
 	}
-
+	
+	//Kiểm thử chuyển hướng đến Site Map
 	@Test
 	public void testNavigationToSiteMap() {
 	    // Mở trang chính của website OpenCart
@@ -133,7 +137,9 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000);
 	}
-
+	
+	
+	//Kiểm thử chuyển hướng đến Contact Us
 	@Test
 	public void testNavigationToContactUs() {
 	    // Mở trang chính của website OpenCart
@@ -158,7 +164,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000);
 	}
-
+	
+	//Kiểm thử chuyển hướng đến Returns
 	@Test
 	public void testNavigationToReturns() {
 	    // Mở trang chính của website OpenCart
@@ -183,7 +190,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000);
 	}
-
+	
+	//Kiểm thử chuyển hướng đến Delivery Information
 	@Test
 	public void testNavigationToDeliveryInformation() {
 	    // Mở trang chính của website OpenCart
@@ -209,7 +217,7 @@ public class FooterNavigationNoLoggedInTest {
 	    sleep(1000);
 	}
 
-
+	//Kiểm thử chuyển hướng đến Brands
 	@Test
 	public void testNavigationToBrands() {
 	    // Điều hướng đến trang chính của OpenCart
@@ -234,7 +242,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000); // Tạm dừng 1 giây trước khi kết thúc phương thức
 	}
-
+	
+	//Kiểm thử chuyển hướng đến Gift Certificates
 	@Test
 	public void testNavigationToGiftCertificates() {
 	    // Điều hướng đến trang chính của OpenCart
@@ -259,7 +268,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000); // Tạm dừng 1 giây trước khi kết thúc phương thức
 	}
-
+	
+	//Kiểm thử chuyển hướng đến Specials
 	@Test
 	public void testNavigationToSpecials() {
 	    // Điều hướng đến trang chính của OpenCart
@@ -284,7 +294,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000); // Tạm dừng 1 giây trước khi kết thúc phương thức
 	}
-
+	
+	//Kiểm thử chuyển hướng đến Affliliate
 	@Test
 	public void testNavigationToAffiliateWithoutLogin() {
 	    // Điều hướng đến trang chính của OpenCart
@@ -309,7 +320,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000); // Tạm dừng 1 giây trước khi kết thúc phương thức
 	}
-
+	
+	//Kiểm thử chuyển hướng đến My Account
 	@Test
 	public void testNavigationToMyAccountWithoutLogin() {
 	    // Điều hướng đến trang chính của OpenCart
@@ -334,7 +346,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000); // Tạm dừng 1 giây trước khi kết thúc phương thức
 	}
-
+	
+	//Kiểm thử chuyển hướng đến Order History
 	@Test
 	public void testNavigationToOrderHistoryWithoutLogin() {
 	    // Điều hướng đến trang chính của OpenCart
@@ -359,7 +372,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000); // Tạm dừng 1 giây trước khi kết thúc phương thức
 	}
-
+	
+	//Kiểm thử chuyển hướng đến WishList
 	@Test
 	public void testNavigationToWishListWithoutLogin() {
 	    // Điều hướng đến trang chính của OpenCart
@@ -384,7 +398,8 @@ public class FooterNavigationNoLoggedInTest {
 
 	    sleep(1000); // Tạm dừng 1 giây trước khi kết thúc phương thức
 	}
-
+	
+	//Kiểm thử chuyển hướng đến News Letters
 	@Test
 	public void testNavigationToNewsletterWithoutLogin() {
 	    // Điều hướng đến trang chính của OpenCart

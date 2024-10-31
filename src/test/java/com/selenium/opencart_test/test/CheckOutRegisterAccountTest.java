@@ -32,7 +32,7 @@ public class CheckOutRegisterAccountTest {
 	
 	@Test
 	public void testCheckoutWithRegisterAccount() {
-		//Mục tiêu: Kiểm thử với tài khoản đăng ký
+		//Kiểm thử với tài khoản đăng ký
 	    // Mở trang chính của OpenCart để bắt đầu quy trình mua hàng
 	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
 	    sleep(1000); // Đợi một chút để trang tải hoàn toàn
@@ -190,7 +190,7 @@ public class CheckOutRegisterAccountTest {
 
 	@Test
 	public void testRegisterAccountNoChosePaymentandShipping() {
-		//Mục đích: Kiểm thử với tài khoản đăng ký không chọn Payment và Shipping Method
+		//Kiểm thử với tài khoản đăng ký không chọn Payment và Shipping Method
 	    // Mở trang chính của OpenCart để bắt đầu quy trình mua hàng
 	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
 	    sleep(1000); // Đợi một chút để trang tải hoàn toàn
@@ -295,7 +295,7 @@ public class CheckOutRegisterAccountTest {
 
 	@Test
 	public void testRegisterAccountAboveUpperBoundary() {
-		//Mục đích: Kiểm thử tài khoản đăng ký với input trên biên trên.
+		//Kiểm thử tài khoản đăng ký với input trên biên trên.
 	    // Mở trang chính của OpenCart
 	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
 	    sleep(1000); // Đợi một chút để trang tải hoàn toàn
@@ -427,7 +427,7 @@ public class CheckOutRegisterAccountTest {
 	
 	@Test
 	public void testRegisterAccountUpperBoundary() {
-		//Mục đích: Kiểm thử thanh toán với tài khoản đăng ký với input nhập liệu độ dài ở giới hạn
+		//Kiểm thử thanh toán với tài khoản đăng ký với input nhập liệu độ dài ở giới hạn
 	    // Mở trang chủ của website OpenCart
 	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
 	    sleep(1000); // Đợi 1 giây để trang tải hoàn tất
@@ -558,8 +558,8 @@ public class CheckOutRegisterAccountTest {
 
 	
 	@Test
-	// Mục đích của hàm: Kiểm tra chức năng đăng ký tài khoản với các thông tin vượt quá giới hạn cho phép
 	public void testRegisterAccountBoundary() {
+		//Kiểm tra chức năng đăng ký tài khoản với các thông tin vượt quá giới hạn cho phép
 	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
 	    sleep(1000);
 
@@ -678,8 +678,9 @@ public class CheckOutRegisterAccountTest {
 	}
 
 	@Test
-	// Mục đích của hàm: Kiểm tra chức năng đăng ký tài khoản với các thông tin ở giới hạn tối thiểu cho phép
+	
 	public void testRegisterAccountLowerBoundary() {
+		//Kiểm tra chức năng đăng ký tài khoản với các thông tin ở giới hạn tối thiểu cho phép
 	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
 	    sleep(1000);
 
@@ -799,8 +800,9 @@ public class CheckOutRegisterAccountTest {
 
 	
 	@Test
-	// Mục đích của hàm: Kiểm tra chức năng đăng ký tài khoản với các thông tin ở trên giới hạn tối thiểu cho phép
+	
 	public void testRegisterAccountAboveLowerBoundary() {
+		//Kiểm tra chức năng đăng ký tài khoản với các thông tin ở trên giới hạn tối thiểu cho phép
 	    driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
 	    sleep(1000);
 
@@ -920,6 +922,7 @@ public class CheckOutRegisterAccountTest {
 	
 	@Test
 	public void testRegisterAccountUnderLowerBoundary() {
+		//Kiểm thử thanh toán khi người dùng nhập liệu các thông tin có độ dài dưới của giới han dưới
 		driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
 		sleep(1000);
 
