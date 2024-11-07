@@ -68,7 +68,7 @@ public class CheckOutRegisterAccountTest {
 	    // Khai báo thông tin cần thiết cho việc đăng ký tài khoản
 	    String firstName = "Qui";
 	    String lastName = "Nguyen";
-	    String email = "test_ck_011@gmail.com";
+	    String email = "test_ck4_011@gmail.com";
 	    String company = "Company ABC";
 	    String address1 = "Quan 1";
 	    String address2 = "Quan 5";
