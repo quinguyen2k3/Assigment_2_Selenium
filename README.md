@@ -19,8 +19,6 @@ File README này giải thích cách thiết lập môi trường và chạy cá
 - **Web Test OpenCart**: Dự án chạy web ở mức Local. Hướng dẫn cài đặt chi tiết sẽ được trình bày trong video sau: [Video hướng dẫn](https://www.youtube.com/watch?v=GftTTFm58d8).
 
 ## 2. Các bước để chạy mã
-
-### 2.1. Thiết lập dự án
 1. **Clone dự án**:
    ```bash
    git clone https://github.com/quinguyen2k3/Assigment_2_Selenium.git
